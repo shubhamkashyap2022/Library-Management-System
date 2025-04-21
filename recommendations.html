@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>LMS - Book Recommendations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #1a1616;
+            padding: 10px 0;
+            color: white;
+        }
+
+        .navbar .brand {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .navbar .nav-avatar {
+            width: 30px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .wrapper {
+            padding: 40px 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+
+        
+.sidebar {
+    background-color: #1a1616;
+            padding: 20px;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            overflow-y: auto;
+}
+.sidebar ul {
+            list-style: none;
+        }
+.sidebar ul li {
+    margin: 17px 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+            color: #ddd;
+            display: block;
+            padding: 10px 15px;
+            background: #222f42;
+            border-radius: 6px;
+            transition: all 0.3s;
+} 
+
+.sidebar a:hover {
+    color: #fff;
+    background: #2e70d9;
+}
+.sidebar li.active a,
+        .sidebar a:hover {
+            background: #4a90e2;
+            color: #fff;
+        }
+
+        .table {
+            width: 100%;
+            background-color: #1a1616;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .table th, .table td {
+            padding: 15px;
+            border: 1px solid #e1e1e1;
+            text-align: left;
+            color: white;
+        }
+
+        .table th {
+            background-color: #2980b9;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-success:hover {
+            background-color: #27ae60;
+        }
+
+        .footer {
+            background-color: #1a1616;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .span3 {
+            flex: 1;
+        }
+
+        .span9 {
+            flex: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a class="brand" href="index.html">Library Management System</a>
+    </div>
+
+    <!-- Content -->
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="span3">
+                    <div class="sidebar">
+                        <ul>
+                            <li><a href="student.html"><i class="fas fa-user-graduate"></i>👥 Student Profile</a></li>
+            <li><a href="home.html"><i class="fas fa-home"></i>🏠 Home</a></li>
+            <li><a href="book.html"><i class="fas fa-book"></i>📚 All Books</a></li>
+            <li><a href="requests.html"><i class="fas fa-exchange-alt"></i>🔁 Issue/Return Requests</a></li>
+            <li><a href="recommendations.html"><i class="fas fa-thumbs-up"></i>💡 Book Recommendations</a></li>
+            <li><a href="current.html"><i class="fas fa-book-reader"></i>📖 Currently Issued Books</a></li>
+            <li><a href="rating.html"><i class="fas fa-plus"></i>🚪 Rate Books </a></li>
+            <li><a href="message.html"><i class="fas fa-envelope"></i>📨 Messages</a></li>
+            </ul>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="span9">
+                    <h2>📖 Book Recommendations</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Book Name</th>
+                                <th>Description</th>
+                                <th>Recommended By</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Introduction to Computer Science</td>
+                                <td>A comprehensive guide to fundamental computing concepts</td>
+                                <td><b>STU001</b></td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Database Systems</td>
+                                <td>In-depth coverage of modern database technologies</td>
+                                <td><b>STU002</b></td>
+                            </tr>
+                            <tr>
+                                <td>Web Development Fundamentals</td>
+                                <td>Essential skills for building modern web applications</td>
+                                <td><b>STU003</b></td>
+                            </tr>
+                            <tr>
+                                <td>Data Structures and Algorithms</td>
+                                <td>Core concepts for efficient programming</td>
+                                <td><b>STU004</b></td>
+                            </tr>
+        
+                               
+                                <tr>
+                                    <td>Machine Learning Basics</td>
+                                    <td>Introductory guide to machine learning and AI techniques</td>
+                                    <td><b>STU005</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Cybersecurity Essentials</td>
+                                    <td>Understanding the fundamentals of securing digital systems</td>
+                                    <td><b>STU006</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Cloud Computing Principles</td>
+                                    <td>Concepts and services behind modern cloud platforms</td>
+                                    <td><b>STU007</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Operating System Concepts</td>
+                                    <td>Deep dive into OS design and architecture</td>
+                                    <td><b>STU008</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Introduction to Python</td>
+                                    <td>Learning programming through Python basics</td>
+                                    <td><b>STU009</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Object-Oriented Programming with Java</td>
+                                    <td>OOP principles using Java for real-world applications</td>
+                                    <td><b>STU010</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Artificial Intelligence Foundations</td>
+                                    <td>History and fundamentals of artificial intelligence</td>
+                                    <td><b>STU011</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile App Development</td>
+                                    <td>Building applications for Android and iOS</td>
+                                    <td><b>STU012</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Network Security</td>
+                                    <td>Protecting communication over networks</td>
+                                    <td><b>STU013</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Software Engineering Practices</td>
+                                    <td>Structured approaches to software development</td>
+                                    <td><b>STU014</b></td>
+                                </tr>
+                                <tr>
+                                    <td>UI/UX Design Principles</td>
+                                    <td>Creating intuitive and engaging user experiences</td>
+                                    <td><b>STU015</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Big Data Analytics</td>
+                                    <td>Handling and interpreting large datasets effectively</td>
+                                    <td><b>STU016</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Game Development with Unity</td>
+                                    <td>Basics of game design and programming with Unity</td>
+                                    <td><b>STU017</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Ethical Hacking</td>
+                                    <td>Learn the techniques of ethical penetration testing</td>
+                                    <td><b>STU018</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Blockchain Technology</td>
+                                    <td>Understanding decentralized digital ledgers</td>
+                                    <td><b>STU019</b></td>
+                                </tr>
+                                <tr>
+                                    <td>Augmented and Virtual Reality</td>
+                                    <td>Exploring immersive technologies in digital spaces</td>
+                                    <td><b>STU020</b></td>
+                                </tr>
+
+                            
+                        </tbody>
+                    </table>
+
+                    <center>
+                        <a href="addbook.html" class="btn-success">Add a Book</a>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Library Management System — All rights reserved.
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMS - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #dee7f4;
+      color: #000000;
+    }
+
+    .navbar {
+      background-color: #000000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .navbar .brand {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .wrapper {
+      display: flex;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #b9c5e2;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-right: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #000000;
+      font-weight: 500;
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover, .sidebar .active a {
+      background-color: #057dcd;
+      color: white;
+    }
+
+    .main-content {
+      flex: 1;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-content h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .main-content p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background-color: #000000;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="brand">Library Management System</div>
+  </div>
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <ul>
+        <li><a href="student.html"><i class="fas fa-user-graduate"></i>👥 Student Profile</a></li>
+        <li><a href="home.html"><i class="fas fa-home"></i>🏠 Home</a></li>
+        <li><a href="book.html"><i class="fas fa-book"></i>📚 All Books</a></li>
+        <li><a href="requests.html"><i class="fas fa-exchange-alt"></i>🔁 Issue/Return Requests</a></li>
+        <li><a href="recommendations.html"><i class="fas fa-thumbs-up"></i>💡 Book Recommendations</a></li>
+        <li><a href="current.html"><i class="fas fa-book-reader"></i>📖 Currently Issued Books</a></li>
+        <li><a href="rating.html"><i class="fas fa-plus"></i>🚪 Rate Books </a></li>
+        <li><a href="message.html"><i class="fas fa-envelope"></i>📨 Messages</a></li>
+    </ul>
+    </div>
+
+    <div class="main-content">
+      <h1>Welcome to LMS Dashboard</h1>
+      <p>
+        This is the home page of the Library Management System (LMS). Use the sidebar to navigate between features such as managing students, adding books, checking issued records, and viewing recommendations.
+      </p>
+      <p>
+        Our system helps librarians and users manage book inventories, issue/return requests, and gain insights into the most popular and recommended books. Stay organized and efficient with LMS.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Library Management System — All rights reserved.
+  </div>
+</body>
+</html>

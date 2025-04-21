@@ -1,0 +1,136 @@
+/* Reset some styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    background-image: url("jaipur-national-university-jaipur-rajasthan-banner.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 95%;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #2d659d;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 1rem;
+    color: white;
+}
+
+.nav-left {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.nav-right a:hover {
+    text-decoration: underline;
+}
+
+h2{
+    text-align: center;
+}
+
+
+/* Page Container */
+.page-container {
+    margin-top: 80px;
+    padding: 2rem;
+    display: none;
+}
+
+.page-container.active {
+    display: block;
+}
+
+/* Form Styles */
+.login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.form-group {
+    margin-bottom: 1rem;
+
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+input::placeholder{
+    color: gray;
+    opacity: .5;
+}
+
+button.login-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #0073ee, #00a3cc); /* Gradient background */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button a{
+    color: #161718;
+    text-decoration: none;}
+
+
+.secondary-btn {
+    background: transparent;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    margin-top: 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #393b3f;
+    text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    color: rgb(4, 2, 2);
+    font-size: 14px;
+}

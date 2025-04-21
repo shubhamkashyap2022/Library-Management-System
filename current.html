@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Returnd Books - LMS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #121212;
+      color: #eee;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      background: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-user {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-user img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #181818;
+      padding: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 10px 15px;
+      background: #262626;
+      color: #ccc;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover,
+    .sidebar li.active a {
+      background: #4a90e2;
+      color: #fff;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .form-horizontal {
+      margin-bottom: 30px;
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .form-horizontal label {
+      font-weight: 500;
+    }
+
+    .form-horizontal input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 60%;
+      margin-right: 10px;
+    }
+
+    .form-horizontal button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: #4a90e2;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .form-horizontal button:hover {
+      background: #357ab8;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #1e1e1e;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    thead {
+      background: #333;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    tbody tr:nth-child(odd) {
+      background: #2a2a2a;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #242424;
+    }
+
+    .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+    .dues-zero {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    .dues-due {
+      color: #f44336;
+      font-weight: bold;
+    }
+
+    .footer {
+      background: #1e1e1e;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .sidebar li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      .form-horizontal input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="brand">Library Management System</div>
+    <div class="nav-user">
+      <img src="images/user.png" alt="User" />
+      <span>Admin</span>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <ul>
+        <li><a href="student.html"><i class="fas fa-user-graduate"></i>👥 Student Profile</a></li>
+        <li><a href="home.html"><i class="fas fa-home"></i>🏠 Home</a></li>
+        <li><a href="book.html"><i class="fas fa-book"></i>📚 All Books</a></li>
+        <li><a href="requests.html"><i class="fas fa-exchange-alt"></i>🔁 Issue/Return Requests</a></li>
+        <li><a href="recommendations.html"><i class="fas fa-thumbs-up"></i>💡 Book Recommendations</a></li>
+        <li><a href="current.html"><i class="fas fa-book-reader"></i>📖 Currently Issued Books</a></li>
+        <li><a href="rating.html"><i class="fas fa-plus"></i>🚪 Rate Books </a></li>
+        <li><a href="message.html"><i class="fas fa-envelope"></i>📨 Messages</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <form class="form-horizontal" action="current.html" method="post">
+        <label for="title"><b>Search:</b></label><br><br>
+        <input type="text" id="title" name="title" placeholder="Enter Roll No / Book Name / Book ID" required>
+        <button type="submit" name="submit">Search</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Book ID</th>
+            <th>Book Name</th>
+            <th>Return Date</th>
+            <th>Due Date</th>
+            <th>Dues</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BK101</td>
+            <td>Introduction to Computer Science</td>
+            <td>2023-05-15</td>
+            <td>2023-06-15</td>
+            <td class="dues-zero">0</td>
+            <td><a href="returnrequest.html" class="btn-success">Return</a></td>
+          </tr>
+          <tr>
+            <td>BK102</td>
+            <td>Advanced Database Systems</td>
+            <td>2023-05-20</td>
+            <td>2023-06-20</td>
+            <td class="dues-zero">0</td>
+            <td><a href="returnrequest.html" class="btn-success">Return</a></td>
+          </tr>
+          <tr>
+            <td>BK103</td>
+            <td>Web Development Fundamentals</td>
+            <td>2023-05-10</td>
+            <td>2023-06-10</td>
+            <td class="dues-due">5</td>
+            <td><a href="returnrequest.html" class="btn-success">Return</a></td>
+          </tr>
+          <tr>
+            <td>BK104</td>
+            <td>Data Structures and Algorithms</td>
+            <td>2023-05-25</td>
+            <td>2023-06-25</td>
+            <td class="dues-zero">0</td>
+            <td><a href="returnrequest.html" class="btn-success">Return</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Library Management System. All rights reserved.
+  </div>
+
+</body>
+</html>

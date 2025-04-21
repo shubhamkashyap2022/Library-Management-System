@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>LMS - All Books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #f1f1f1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .navbar {
+            background-color: #1f1f1f;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .nav-user img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .wrapper {
+            display: flex;
+            min-height: calc(100vh - 60px);
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #181818;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 12px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 15px;
+            background: #262626;
+            color: #ccc;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .sidebar li.active a,
+        .sidebar a:hover {
+            background: #4a90e2;
+            color: #fff;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .form-horizontal {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .form-horizontal input {
+            width: 60%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background: #2a2a2a;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-horizontal input:focus {
+            outline: 2px solid #4a90e2;
+        }
+
+        .form-horizontal .btn {
+            padding: 10px 15px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #4a90e2;
+            color: white;
+            cursor: pointer;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #1e1e1e;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .table thead {
+            background-color: #333;
+        }
+
+        .table th, .table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #444;
+        }
+
+        .table tbody tr:hover {
+            background-color: #292929;
+        }
+
+        .btn-success, .btn-success {
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .btn-success {
+            background-color: #4a90e2;
+            color: white;
+            margin-right: 8px;
+        }
+
+        .btn-success:hover {
+            background-color: #357ab8;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        .footer {
+            background: #1a1616;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .form-horizontal input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .form-horizontal .btn {
+                width: 100%;
+            }
+
+            .table th, .table td {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="brand">Library Management System</div>
+        <div class="nav-user">
+            <img src="images/user.png" alt="User">
+            <a href="logout.html" style="color: #fff; text-decoration: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="student.html"><i class="fas fa-user-graduate"></i>👥 Student Profile</a></li>
+                <li><a href="home.html"><i class="fas fa-home"></i>🏠 Home</a></li>
+                <li><a href="book.html"><i class="fas fa-book"></i>📚 All Books</a></li>
+                <li><a href="requests.html"><i class="fas fa-exchange-alt"></i>🔁 Issue/Return Requests</a></li>
+                <li><a href="recommendations.html"><i class="fas fa-thumbs-up"></i>💡 Book Recommendations</a></li>
+                <li><a href="current.html"><i class="fas fa-book-reader"></i>📖 Currently Issued Books</a></li>
+                <li><a href="rating.html"><i class="fas fa-plus"></i>🚪 Rate Books </a></li>
+                <li><a href="message.html"><i class="fas fa-envelope"></i>📨 Messages</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Search Box -->
+            <form class="form-horizontal" action="book.html" method="get">
+                <label for="title"><strong>Search for a Book:</strong></label>
+                <input type="text" id="title" name="title" placeholder="Enter Name or ID of Book" required>
+                <button type="submit" name="submit" class="btn">Search</button>
+            </form>
+
+            <!-- Books Table -->
+            <table class="table" id="tables">
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Book Name</th>
+                        <th>Availability</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample Data -->
+                    <tr>
+                        <td>BK101</td>
+                        <td>Introduction to Algorithms</td>
+                        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+                        <td>
+                            <a href="booksdetails.html" class="btn-success">Details</a>
+                            <a href="bookissue.html" class="btn-success">Issue</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BK102</td>
+                        <td>Database Management Systems</td>
+                        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+                        <td>
+                            <a href="booksdetails.html" class="btn-success">Details</a>
+                        </td>
+                    </tr>
+                     <!-- Book 3 -->
+    <tr>
+        <td>BK103</td>
+        <td>Operating System Concepts</td>
+        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+            <a href="bookissue.html" class="btn-success">Issue</a>
+        </td>
+    </tr>
+    <!-- Book 4 -->
+    <tr>
+        <td>BK104</td>
+        <td>Computer Networks</td>
+        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+        </td>
+    </tr>
+    <!-- Book 5 -->
+    <tr>
+        <td>BK105</td>
+        <td>Artificial Intelligence</td>
+        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+            <a href="bookissue.html" class="btn-success">Issue</a>
+        </td>
+    </tr>
+    <!-- Book 6 -->
+    <tr>
+        <td>BK106</td>
+        <td>Machine Learning</td>
+        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+        </td>
+    </tr>
+    <!-- Book 7 -->
+    <tr>
+        <td>BK107</td>
+        <td>Clean Code</td>
+        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+            <a href="bookissue.html" class="btn-success">Issue</a>
+        </td>
+    </tr>
+    <!-- Book 8 -->
+    <tr>
+        <td>BK108</td>
+        <td>Data Structures in C</td>
+        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+        </td>
+    </tr>
+    <!-- Book 9 -->
+    <tr>
+        <td>BK109</td>
+        <td>Design Patterns</td>
+        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+            <a href="bookissue.html" class="btn-success">Issue</a>
+        </td>
+    </tr>
+    <!-- Book 10 -->
+    <tr>
+        <td>BK110</td>
+        <td>The Pragmatic Programmer</td>
+        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html=BK110" class="btn-success">Details</a>
+        </td>
+    </tr>
+    <!-- Book 11 -->
+    <tr>
+        <td>BK111</td>
+        <td>Java: The Complete Reference</td>
+        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html=BK111" class="btn-success">Details</a>
+            <a href="bookissue.html" class="btn-success">Issue</a>
+        </td>
+    </tr>
+    <!-- Book 12 -->
+    <tr>
+        <td>BK112</td>
+        <td>Python Crash Course</td>
+        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html=BK112" class="btn-success">Details</a>
+        </td>
+    </tr>
+    <!-- Book 13 -->
+    <tr>
+        <td>BK113</td>
+        <td>Fluent Python</td>
+        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html=BK113" class="btn-success">Details</a>
+            <a href="bookissue.html" class="btn-success">Issue</a>
+        </td>
+    </tr>
+    <!-- Book 14 -->
+    <tr>
+        <td>BK114</td>
+        <td>You Don't Know JS</td>
+        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html=BK114" class="btn-success">Details</a>
+        </td>
+    </tr>
+    <!-- Book 15 -->
+    <tr>
+        <td>BK115</td>
+        <td>JavaScript: The Good Parts</td>
+        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html=BK115" class="btn-success">Details</a>
+            <a href="bookissue.html" class="btn-success">Issue</a>
+        </td>
+    </tr>
+    <!-- Book 16 -->
+    <tr>
+        <td>BK116</td>
+        <td>Cracking the Coding Interview</td>
+        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html=BK116" class="btn-success">Details</a>
+        </td>
+    </tr>
+    <!-- Book 17 -->
+    <tr>
+        <td>BK117</td>
+        <td>Computer Architecture</td>
+        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html=BK117" class="btn-success">Details</a>
+            <a href="bookissue.html" class="btn-success">Issue</a>
+        </td>
+    </tr>
+    <!-- Book 18 -->
+    <tr>
+        <td>BK118</td>
+        <td>Principles of Compiler Design</td>
+        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+        </td>
+    </tr>
+    <!-- Book 19 -->
+    <tr>
+        <td>BK119</td>
+        <td>Computer Graphics</td>
+        <td><span style="color:limegreen;"><strong>Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+            <a href="bookissue.html" class="btn-success">Issue</a>
+        </td>
+    </tr>
+    <!-- Book 20 -->
+    <tr>
+        <td>BK120</td>
+        <td>Introduction to Cybersecurity</td>
+        <td><span style="color:red;"><strong>Not Available</strong></span></td>
+        <td>
+            <a href="booksdetails.html" class="btn-success">Details</a>
+        </td>
+    </tr>
+                    <!-- Add More Rows as Needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 Library Management System. All rights reserved.
+    </div>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Send Message - LMS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #121212;
+      color: #eee;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      background: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-user {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-user img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .wrapper {
+      display: flex;
+      min-height: calc(100vh - 60px);
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #181818;
+      padding: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 10px 15px;
+      background: #262626;
+      color: #ccc;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover,
+    .sidebar li.active a {
+      background: #4a90e2;
+      color: #fff;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .module {
+      background: #1e1e1e;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .module-head h3 {
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      background: #262626;
+      color: #eee;
+    }
+
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background: #4a90e2;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #357ab8;
+    }
+
+    .footer {
+      background: #181818;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .sidebar li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="brand">Library Management System</div>
+    <div class="nav-user">
+      <img src="images/user.png" alt="User" />
+      <span>Admin</span>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <ul>
+        <li><a href="student.html"><i class="fas fa-user-graduate"></i>👥 Student Profile</a></li>
+            <li><a href="home.html"><i class="fas fa-home"></i>🏠 Home</a></li>
+            <li><a href="book.html"><i class="fas fa-book"></i>📚 All Books</a></li>
+            <li><a href="requests.html"><i class="fas fa-exchange-alt"></i>🔁 Issue/Return Requests</a></li>
+            <li><a href="recommendations.html"><i class="fas fa-thumbs-up"></i>💡 Book Recommendations</a></li>
+            <li><a href="current.html"><i class="fas fa-book-reader"></i>📖 Currently Issued Books</a></li>
+            <li><a href="rating.html"><i class="fas fa-plus"></i>🚪 Rate Books </a></li>
+            <li><a href="message.html"><i class="fas fa-envelope"></i>📨 Messages</a></li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="module">
+        <div class="module-head">
+          <h3>Send a Message</h3>
+        </div>
+        <div class="module-body">
+          <form action="sendmessage.html" method="get">
+            <label for="RollNo">Receiver Roll No:</label>
+            <input type="text" id="RollNo" name="RollNo" placeholder="Enter Roll No" required />
+
+            <label for="Message">Message:</label>
+            <textarea id="Message" name="Message" placeholder="Enter your message here..." required></textarea>
+
+            <button type="submit" name="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Library Management System. All rights reserved.
+  </div>
+
+</body>
+</html>
